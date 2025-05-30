@@ -10,8 +10,9 @@ connectDB();
 const app = express();
 app.use(cors(
     {
-        origin: 'http://20.244.50.12:4001', // Adjust this to your frontend URL
-        credentials: true,
+        origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
     }
 ));
 app.use(express.json());
