@@ -5,7 +5,7 @@ import BookTable from '../components/BookTable';
 const token = localStorage.getItem('token');
 
 if (!token) {
-  alert("User not authenticated");
+   console.error('No token found in localStorage. Please log in first.');
 }
 
 
