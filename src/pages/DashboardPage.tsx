@@ -25,7 +25,7 @@ const DashboardPage: React.FC<Props> = ({ onLogout }) => {
             Authorization: `Bearer ${token}`
         }
     });
-      alert('Scraping started');
+      alert('Scraping finished');
     } catch (err) {
       alert('Scraping failed');
     }
