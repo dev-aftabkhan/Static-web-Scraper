@@ -5,8 +5,8 @@ exports.scrapeBooks = async (req, res) => {
   try {
     // Optional: clear existing books before scraping fresh data
     await deleteAllBooks();
-
-    const pythonProcess = spawn('python3', ['scraper/scrape_books.py']);
+    const pythonPath = '/var/www/StaticWebScraper-Backend/venv/bin/python';
+    const pythonProcess = spawn(pythonPath, ['scraper/scrape_books.py']);
 
     pythonProcess.stdout.on('data', (data) => {
       console.log(`Python stdout: ${data}`);
