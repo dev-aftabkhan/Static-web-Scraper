@@ -8,7 +8,12 @@ const bookRoutes = require('./routes/bookRoutes');
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin: 'http://localhost:4001', // Adjust this to your frontend URL
+        credentials: true,
+    }
+));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
