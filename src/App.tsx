@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AuthPage from './pages/AuthPage';
-//import DashboardPage from './pages/DashboardPage';
+import DashboardPage from './pages/DashboardPage';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(!!localStorage.getItem('token'));
@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen">
       {isAuthenticated ? (
-        <AuthPage onAuthSuccess={() => setIsAuthenticated(true)} />
+        <DashboardPage onLogout={() => setIsAuthenticated(false)} />
       ) : (
         <AuthPage onAuthSuccess={() => setIsAuthenticated(true)} />
       )}
