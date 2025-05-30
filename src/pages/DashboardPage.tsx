@@ -20,7 +20,7 @@ const DashboardPage: React.FC<Props> = ({ onLogout }) => {
   const scrapeBooks = async () => {
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/books/scrape', {}, {
+      await axios.post('http://20.244.50.12:4000/api/books/scrape', {}, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -35,7 +35,7 @@ const DashboardPage: React.FC<Props> = ({ onLogout }) => {
   const getBooks = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/books/get', {
+      const res = await axios.get('http://20.244.50.12:4000/api/books/get', {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -50,7 +50,7 @@ const DashboardPage: React.FC<Props> = ({ onLogout }) => {
   const deleteBooks = async () => {
     setLoading(true);
     try {
-      await axios.delete('http://localhost:5000/api/books/delete', {
+      await axios.delete('http://20.244.50.12:4000/api/books/delete', {
     headers: {
       Authorization: `Bearer ${token}`
     }
